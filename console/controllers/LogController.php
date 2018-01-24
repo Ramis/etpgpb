@@ -14,6 +14,8 @@ class LogController extends Controller
 {
 
     /**
+     * Чтение данный их файлов
+     *
      * @param String $log_on_urls
      * @param String $log_on_os
      * @return int
@@ -125,7 +127,14 @@ class LogController extends Controller
         return ExitCode::OK;
     }
 
-    private static function validateDateTime($date, $format = 'Y-m-d')
+    /**
+     * Валидатор даты
+     *
+     * @param string $date
+     * @param string $format
+     * @return bool
+     */
+    private static function validateDateTime(string $date,string  $format = 'Y-m-d'): bool
     {
         $d = \DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;

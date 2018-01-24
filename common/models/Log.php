@@ -9,6 +9,8 @@ class Log
 {
 
     /**
+     * Выборка данных для показа в табличной форме
+     *
      * @param int $limit
      * @param int $offset
      * @return array
